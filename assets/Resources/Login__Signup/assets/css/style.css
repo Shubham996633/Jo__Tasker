@@ -147,15 +147,7 @@ img{
     color: var(--first-color-light);
 }
 
-.login__forgot{
-    display: block;
-    width: max-content;
-    margin-left: auto;
-    margin-top: .5rem;
-    font-size: var(--small-font-size);
-    font-weight: 600;
-    color: var(--first-color-light);
-}
+
 
 
 .login__button{
@@ -190,15 +182,7 @@ img{
     cursor: pointer;
 }
 
-.login__social{
-    margin-top: 2rem;
-}
 
-.login__social-icon{
-    font-size: 1.5rem;
-    color: var(--first-color-dark);
-    margin: 0 1.5rem;
-}
 
 .block{
     display: block;
@@ -246,6 +230,6 @@ img{
     }
 
     .login__create{
-        bottom: -5rem;
+        bottom: -2rem;
     }
 }
