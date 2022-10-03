@@ -233,3 +233,10 @@ img{
         bottom: -5rem;
     }
 }
+
+button{
+    border: none;
+    outline: none;
+    width: 316px;
+    cursor: pointer;
+}
