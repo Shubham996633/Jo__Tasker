@@ -252,3 +252,44 @@ input:checked ~ .bubble::after{
     text-decoration: line-through;
     color: var(--grey);
 }
+.btn-signin{
+  
+    
+    text-decoration: none;
+    outline: none;
+    border: none;
+    display: inline-block;
+    background: linear-gradient(101deg,
+                                hsl(228,66%,53%),
+                                hsl(228,66%,47%));
+    color: #fff;
+    padding: 6px 5.4px;
+    border-radius: .5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    box-shadow: 0 4px 8px hsla(228,66%,45%, .25);
+    cursor: pointer;
+   
+
+    
+    
+}
+body{
+    transition: .3s;
+}
+.create-todo-name{
+    margin-top: -18px;
+}
+.header{
+    display: flex;
+    margin-top: 1rem;
+    gap: 30%;
+    margin-left: 1rem;
+}
+.date-time span{
+    font-weight: 700;
+    
+}
+.date-time{
+    margin-top: 9px;
+}
