@@ -34,9 +34,29 @@ signUpForm.addEventListener('submit', e => {
             Password: password
         }).then(() => {
             console.log('User Data Created')
+            
+
+            
+
+
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 4500,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            
+            Toast.fire({
+              icon: 'info',
+              title: `${name}, Your Account Created Successfully, Now Please Login`
+            })
             loginIn.classList.remove('none')
             loginUp.classList.remove('block')
-
             loginIn.classList.add('block')
             loginUp.classList.add('none')
             
@@ -91,7 +111,7 @@ loginForm.addEventListener('submit', e => {
     console.log(loginEmail, loginPassword)
     auth.signInWithEmailAndPassword(loginEmail, loginPassword).then(() => {
         console.log("User Login Successfull")
-        // location = `../../../index.html`
+        location = `../User__Todo/index.html`
     }).catch(err => {
         console.log(err.message)
         const Toast = Swal.mixin({

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo__Tasker Todo List</title>
+
+
+                <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="app">
+        <div class="header">
+        <div class="date-time">
+            <span id="date">Date</span>
+            <span id="month">Month</span>
+            <span id="year">Year</span>
+            <span id="weekday">Weekday</span>
+        </div>
+        <a class="btn-signin signout">
+            <i class='bx bx-user'></i> Sign Out
+        </a>
+    </div>
+        <section class="greating">
+            <h2 class="title">
+                <!-- What's up, <input type="text" id="name" placeholder="Name Here">  -->
+                Hello, <span id = "current__user">Name of User</span>
+            </h2>
+
+           
+        </section>
+
+        <section class="create-todo">
+            <h3 class="create-todo-name">Create A Todo</h3>
+            <form id ="new-todo-form">
+                <h4>Whats on your todo list ?</h4>
+                <input type="text" name="content" id="content" placeholder="Netflix">
+                <h4>Pick a Category</h4>
+
+                <div class="options">
+                    <label>
+                        <input type="radio" name="category" id = "category1" value = "business">
+                        <span class="bubble business"></span>
+                        <div>Business</div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category" id = "category2" value = "personal">
+                        <span class="bubble personal"></span>
+                        <div>Personal</div>
+                    </label>
+                </div>
+
+                <input type="submit" value="Add Todo">
+            </form>
+
+        </section>
+
+        <section class="todo-list">
+            <h3>TODO LIST</h3>
+            <div class="list" id="todo-list">
+                
+
+
+               
+
+
+            </div>
+        </section>
+    </main>
+
+
+                    <!-- FireBase -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+                apiKey: "AIzaSyAwOL7uLY_8TnMA1zvCHWvob4QUva2wtJU",
+                authDomain: "jo-todo.firebaseapp.com",
+                projectId: "jo-todo",
+                storageBucket: "jo-todo.appspot.com",
+                messagingSenderId: "782904724632",
+                appId: "1:782904724632:web:d68fc1f48e25cbf271d4ed",
+                measurementId: "G-DG6NWVTGLM"
+  };
+
+       
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        const db = firebase.firestore();
+    </script>
+
+                <!-- SweetAlert -->
+
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+
+                    <!-- JavaScript -->
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
