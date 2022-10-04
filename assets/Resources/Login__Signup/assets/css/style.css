@@ -7,7 +7,7 @@
                 /* Colors */
 
     --first-color: #9D4BFF;
-    --first-color-dark: #23004D;
+    --first-color-dark: #352872;
     --first-color-light: #A49EAC;
     --first-color-lighten: #F2F2F2;
 
@@ -175,6 +175,7 @@ img{
     font-weight: 600;
     font-size: var(--small-font-size);
     color: yellow;
+    letter-spacing: 1.2px;
 }
 
 .login__account:active, .login__signin:active, .login__signup:active{
@@ -188,7 +189,9 @@ img{
 }
 
 .login__signin, .login__signup{
-    color: var(--first-color);
+    color: golden;
+    font-weight: 600;
+    font-size: 0.9rem;
     cursor: pointer;
 }
 
@@ -201,10 +204,29 @@ img{
 .none{
     display: none;
 }
+button{
+    border: none;
+    outline: none;
+    
+    cursor: pointer;
+    background-color: #6e57e0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    align-items: right;
+    justify-self: right;
+
+}
 @media screen and (min-width: 576px) {
     .login__forms{
         width: 348px;
         justify-self: center;
+    }
+    button{
+        justify-self: center;
+        max-width: 576px;
+        min-width: 72px;
+        align-items: center;
+        
     }
     
 }
@@ -244,12 +266,19 @@ img{
     }
 }
 
-button{
-    border: none;
-    outline: none;
-    width: 316px;
-    cursor: pointer;
-    background-color: #6e57e0;
-    font-size: 1rem;
-    letter-spacing: 1px;
+
+::-webkit-scrollbar{
+    width: 0.6rem;
+    background-color: hsl(219, 4%, 16%);
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: hsl(219, 4%, 24%);
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(219, 4%, 32%);
+    
 }

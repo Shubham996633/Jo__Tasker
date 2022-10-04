@@ -22,7 +22,7 @@ auth.onAuthStateChanged(user => {
         console.log('User is Sign In')
     }else{
         console.log('User is Sign Out')
-        alert('SignOut')
+        
     }
 })
 
@@ -39,8 +39,30 @@ auth.onAuthStateChanged(user => {
 })
 
 function logout() {
-    auth.signOut();
-    location = '../../../index.html'
+    Swal.fire({
+        title: 'Are you sure?',
+        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Sign Out!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Signing off!',
+            ' ',
+            'success'
+          )
+
+          setTimeout(() => {
+            auth.signOut();
+            location = '../../../index.html'
+          }, 963);
+        }
+      })
+    
+    
 }
 document.querySelector('.signout').addEventListener('click', logout)
 
@@ -243,7 +265,6 @@ function DisplayTodos(){
                     if (change.type == "added") {
                         
                         
-                        console.log(change.doc)
                         renderData(change.doc);
                     }
                     else if (change.type == 'removed') {
@@ -258,3 +279,38 @@ function DisplayTodos(){
 }
 DisplayTodos()
 
+var widths = [0, 492, 3840];
+function resizeFns() {
+  if (window.innerWidth<widths[1]) {
+     
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          confirmButtonColor: 'red',
+          
+          confirmButtonText: 'Close',
+          text: 'Your Screen Size must be greator than 492px to run the Todo',
+          footer: 'Please Try on a device whose width Greator than 492px '
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location = `../../../index.html`
+          }
+        })
+      
+
+      document.querySelector('.app').style.transform = 'scale(0)'
+      
+
+       logout()
+       
+
+
+
+  }else{
+
+      document.querySelector('.app').style.transform = 'scale(1)'
+  }
+}
+
+window.onload = resizeFns;
+resizeFns();

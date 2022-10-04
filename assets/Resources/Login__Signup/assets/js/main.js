@@ -133,3 +133,38 @@ loginForm.addEventListener('submit', e => {
         console.log('User Login Fail')
     })
 })
+var widths = [0, 492, 3840];
+function resizeFns() {
+  if (window.innerWidth<widths[1]) {
+     
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          confirmButtonColor: 'red',
+          
+          confirmButtonText: 'Close',
+          text: 'Your Screen Size must be greator than 492px to run the Todo',
+          footer: 'Please Try on a device whose width Greator than 492px '
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location = `../../../index.html`
+          }
+        })
+      
+
+      document.querySelector('.login').style.transform = 'scale(0)'
+      
+
+    
+
+
+
+
+  }else{
+
+      document.querySelector('.login').style.transform = 'scale(1)'
+  }
+}
+
+window.onload = resizeFns;
+resizeFns();
