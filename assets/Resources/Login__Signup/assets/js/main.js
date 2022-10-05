@@ -25,7 +25,6 @@ signUpForm.addEventListener('submit', e => {
     const name = signUpForm['name'].value
     const email = signUpForm['email'].value
     const password = signUpForm['password'].value
-    console.log(name, email, password)
     signUpForm.reset()
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         return db.collection('users').doc(cred.user.uid).set({
@@ -43,7 +42,7 @@ signUpForm.addEventListener('submit', e => {
               toast: true,
               position: 'top-end',
               showConfirmButton: false,
-              timer: 4500,
+              timer: 963,
               timerProgressBar: true,
               didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -55,6 +54,9 @@ signUpForm.addEventListener('submit', e => {
               icon: 'info',
               title: `${name}, Your Account Created Successfully, Now Please Login`
             })
+            document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+            document.querySelector('.swal2-popup').style.color = 'white'
+            document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
             loginIn.classList.remove('none')
             loginUp.classList.remove('block')
             loginIn.classList.add('block')
@@ -67,7 +69,7 @@ signUpForm.addEventListener('submit', e => {
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
-                timer: 4500,
+                timer: 963,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                   toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -79,6 +81,11 @@ signUpForm.addEventListener('submit', e => {
                 icon: 'info',
                 title: `${err.message}`
               })
+
+              document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+            document.querySelector('.swal2-popup').style.color = 'white'
+            document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+
         })
     }).catch(err => {
         console.log(err.message)
@@ -87,7 +94,7 @@ signUpForm.addEventListener('submit', e => {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 4500,
+            timer: 963,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -99,6 +106,11 @@ signUpForm.addEventListener('submit', e => {
             icon: 'info',
             title: `${err.message}`
           })
+
+          document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+            document.querySelector('.swal2-popup').style.color = 'white'
+            document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+
 
     })
 })
@@ -108,7 +120,6 @@ loginForm.addEventListener('submit', e => {
     e.preventDefault()
     const loginEmail = loginForm['loginEmail'].value
     const loginPassword = loginForm['loginPassword'].value
-    console.log(loginEmail, loginPassword)
     auth.signInWithEmailAndPassword(loginEmail, loginPassword).then(() => {
         console.log("User Login Successfull")
         location = `../User__Todo/index.html`
@@ -118,7 +129,7 @@ loginForm.addEventListener('submit', e => {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 4500,
+            timer: 963,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -130,6 +141,11 @@ loginForm.addEventListener('submit', e => {
             icon: 'info',
             title: `${err.message}`
           })
+
+          document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+            document.querySelector('.swal2-popup').style.color = 'white'
+            document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+
         console.log('User Login Fail')
     })
 })
@@ -168,3 +184,5 @@ function resizeFns() {
 
 window.onload = resizeFns;
 resizeFns();
+
+window.onresize = resizeFns

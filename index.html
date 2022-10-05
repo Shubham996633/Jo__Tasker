@@ -1,107 +1,218 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jo__Tasker Todo List</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JoTasker </title>
 
 
-                <!-- CSS -->
+                    <!-- Google Fonts -->
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+                    <!-- Favicons -->
+
+                    <!-- Boxicons -->
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">              
+
+
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/svg+xml">
+
+                        <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
-<body>
-    <main class="app">
-        <div class="header">
-        <div class="date-time">
-            <span id="date">Date</span>
-            <span id="month">Month</span>
-            <span id="year">Year</span>
-            <span id="weekday">Weekday</span>
-        </div>
-        <a class="btn-signin" href="assets/Resources/Login__Signup/index.html">
-            <i class='bx bx-user'></i> SignIn / SignUp
-        </a>
+
+<body id="top">
+  <header class="header">
+
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+
+        <a href="#" class="logo">JoTasker</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+
+            <li class="navbar-item">
+              <a href="#home" class="navbar-link skewBg" data-nav-link>Home</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="assets/Resources/Login__Signup/index.html" class="navbar-link skewBg" data-nav-link>SignIn / SignUp</a>
+            </li>
+
+
+
+
+            <li class="navbar-item">
+              <a href="#contact" class="navbar-link skewBg" data-nav-link>Contact</a>
+            </li>
+
+          </ul>
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+              <ion-icon name="menu-outline" class="menu"></ion-icon>
+              <ion-icon name="close-outline" class="close"></ion-icon>
+            </button>
+  
+          </div>
+
+   
+
+
+      </div>
     </div>
-        <section class="greating">
-            <h2 class="title">
-                <!-- What's up, <input type="text" id="name" placeholder="Name Here">  -->
-                Hello, <span id = "current__user">Name of User</span>
-            </h2>
 
-           
-        </section>
+  </header>
 
-        <section class="create-todo">
-            <h3 class="create-todo-name">Create A Todo</h3>
-            <form id ="new-todo-form">
-                <h4>Whats on your todo list ?</h4>
-                <input type="text" name="content" id="content" placeholder="Netflix">
-                <h4>Pick a Category</h4>
+  <main>
+    <article>
 
-                <div class="options">
-                    <label>
-                        <input type="radio" name="category" id = "category1" value = "business">
-                        <span class="bubble business"></span>
-                        <div>Business</div>
-                    </label>
+      <section class="section hero" id="home" aria-label="home"
+        style="background-image: url('./assets/img/productivitytest.jfif')">
+        <div class="container">
 
-                    <label>
-                        <input type="radio" name="category" id = "category2" value = "personal">
-                        <span class="bubble personal"></span>
-                        <div>Personal</div>
-                    </label>
-                </div>
+          <div class="hero-content">
 
-                <input type="submit" value="Add Todo">
-            </form>
+            <p class="hero-subtitle">Get Your Todos at Any Place</p>
 
-        </section>
-
-        <section class="todo-list">
-            <h3>TODO LIST</h3>
-            <div class="list" id="todo-list">
-                
+            <h1 class="h1 hero-title">
+                Manage Your Day <span class="span"> as You Want</span> 
+                <br><br>
+            </h1>
 
 
-               
+            <button class="btn skewBg letsStart">Let's Start</button>
+
+          </div>
+
+         
+        </div>
+      </section>
 
 
-            </div>
-        </section>
-    </main>
+   
 
 
-                    <!-- FireBase -->
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-
-    <script>
-        var firebaseConfig = {
-                apiKey: "AIzaSyAwOL7uLY_8TnMA1zvCHWvob4QUva2wtJU",
-                authDomain: "jo-todo.firebaseapp.com",
-                projectId: "jo-todo",
-                storageBucket: "jo-todo.appspot.com",
-                messagingSenderId: "782904724632",
-                appId: "1:782904724632:web:d68fc1f48e25cbf271d4ed",
-                measurementId: "G-DG6NWVTGLM"
-  };
-
-        firebase.initializeApp(firebaseConfig);
-
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-    </script>
+    
 
 
-                    <!-- JavaScript -->
 
-    <script src="assets/js/main.js"></script>
+    </article>
+  </main>
+  <br><br>
+
+  <footer class="footer" id = 'contact'>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">JoTasker</a>
+
+          <p class="footer-text">
+            Manage Your Day as You Want
+          </p>
+
+          <ul class="contact-list">
+
+          
+
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="mail-open"></ion-icon>
+              </div>
+
+              <a href="mailto:shubhammaurya996633+work@gmail.com" class="item-text">Shubham Maurya</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contacts</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Github</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Facebook</a>
+          </li>
+
+       
+
+        </ul>
+
+        
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy;  JoTasker. All Right Reserved by Shubham_Maurya
+        </p>
+
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
