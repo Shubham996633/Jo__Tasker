@@ -42,7 +42,7 @@ signUpForm.addEventListener('submit', e => {
               toast: true,
               position: 'top-end',
               showConfirmButton: false,
-              timer: 963,
+              timer: 4500,
               timerProgressBar: true,
               didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -69,7 +69,7 @@ signUpForm.addEventListener('submit', e => {
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
-                timer: 963,
+                timer: 4500,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                   toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -94,7 +94,7 @@ signUpForm.addEventListener('submit', e => {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 963,
+            timer: 4500,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -129,7 +129,7 @@ loginForm.addEventListener('submit', e => {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 963,
+            timer: 4500,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)
