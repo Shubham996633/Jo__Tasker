@@ -133,7 +133,7 @@ loginForm.addEventListener('submit', e => {
         console.log('User Login Fail')
     })
 })
-var widths = [0, 492, 3840];
+var widths = [0, 369, 3840];
 function resizeFns() {
   if (window.innerWidth<widths[1]) {
      
@@ -143,8 +143,8 @@ function resizeFns() {
           confirmButtonColor: 'red',
           
           confirmButtonText: 'Close',
-          text: 'Your Screen Size must be greator than 492px to run the Todo',
-          footer: 'Please Try on a device whose width Greator than 492px '
+          text: 'Your Screen Size must be greator than 369px to run the Todo',
+          footer: 'Please Try on a device whose width Greator than 369px '
         }).then((result) => {
           if (result.isConfirmed) {
             location = `../../../index.html`

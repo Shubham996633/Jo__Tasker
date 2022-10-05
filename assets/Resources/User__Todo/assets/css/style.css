@@ -288,7 +288,7 @@ input:checked ~ .bubble::after{
     text-decoration: none;
     outline: none;
     border: none;
-    display: inline-block;
+    /* display: flex; */
     background: #907ee7;
     color: white;
     padding: 6px 5.4px;
@@ -298,6 +298,8 @@ input:checked ~ .bubble::after{
     box-shadow: 0 4px 8px hsla(228,66%,45%, .25);
     cursor: pointer;
     font-weight: 600;
+    position: absolute;
+    left: calc(100% - 24%);
    
 
     
@@ -331,3 +333,195 @@ button:active,a:active, .bubble:active{
 .bubble:active{
     transform: scale(.81);
 }
+
+
+@media screen and (min-width: 300px){
+    .actions{
+        margin-left: -6rem;
+    }
+    .btn-signin{
+        width: 72px;
+        font-size: .81rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 399px) {
+    .btn-signin{
+        
+        left: calc(100% - 20%);
+
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+    
+}
+
+@media screen and (min-width: 400px) {
+    .btn-signin{
+        
+        left: calc(100% - 30%);
+
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+    
+}
+
+
+@media screen and (min-width: 470px) {
+    .btn-signin{
+        
+        left: calc(100% - 24%);
+
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+    
+}
+@media screen and (min-width: 576px) {
+    .btn-signin{
+        
+        left: calc(100% - 20%);
+
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+    
+}
+@media screen and (min-width: 700px) {
+
+    .btn-signin{
+        left: calc(100% - 15%);
+    }
+    .options{
+        height: 150px;
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+}
+
+.options:active{
+    scale: (.9);
+}
+
+
+@media screen and (min-width: 948px) {
+
+    .btn-signin{
+        left: calc(100% - 12%);
+    }
+    .options{
+        height: 200px;
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .btn-signin{
+        left: calc(100% - 10%);
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+    
+
+}
+
+
+@media screen and (min-width: 1300px) {
+
+    .btn-signin{
+        left: calc(100% - 9%);
+        
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+    
+
+}
+@media screen and (min-width: 1400px) {
+
+    .btn-signin{
+        left: calc(100% - 8%);
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+    
+
+}
+
+@media screen and (min-width: 1400px) {
+
+    .btn-signin{
+        left: calc(100% - 7%);
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+    
+
+}
+
+@media screen and (min-width: 2100px) {
+
+    .btn-signin{
+        left: calc(100% - 6%);
+    }
+    .btn-signin{
+        width: 102px;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+    }
+    
+
+}
+
