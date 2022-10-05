@@ -10,7 +10,7 @@
 
 <br>
 
-# To Visit Click Here : <a href = "https://shubham996633.github.io/JoGamics__Game__Portal/">JoTasker</a>
+# To Visit Click Here : <a href = "https://bit.ly/JoTasker">JoTasker</a>
 
 ## Complete Overview
 
