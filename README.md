@@ -2,7 +2,7 @@
 
 <br>
 
-#### JoTasker is based on HTML, CSS, and Javascript that allows your tasks to manage with Auth of Firebase and Multi-Device Support
+#### JoTasker is based on HTML, CSS, and Javascript that helps you to Manage Your Day as You want with Auth of Firebase and Multi-Device Support
 
 <br>
 
@@ -40,9 +40,19 @@
 
 <br>
 
+### The User can Access JoTasker from any-where at any-time
+
+## Disclaimer   
+   JoTasker Stores the Data in <a href = "https://console.firebase.google.com/">Firebase</a> so all the user can access their personal todo From any where
+
+   
+
+   
 
 
 
-
-
-
+## Note
+ 
+Some-time there is a clash between Server so By that reason JoTasker can't  
+able to complete your desired request so please visit after Some-time upto that it will be resolved by The Developer
+If not resolved Then Drop a Mail here : ( <a href = "mailto:shubhammaurya996633+work@gmail.com"> Shubham_Maurya</a> )
