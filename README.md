@@ -2,8 +2,7 @@
 
 <br>
 
-#### JoTasker is based on HTML, CSS, and 
-that helps you to Manage Your Day as You want with Auth of Firebase and Multi-Device Support
+#### JoTasker is based on HTML, CSS, and that helps you to Manage Your Day as You want with Auth of Firebase and Multi-Device Support
 
 <br>
 
