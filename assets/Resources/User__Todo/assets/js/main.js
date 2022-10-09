@@ -68,7 +68,7 @@ auth.onAuthStateChanged(user => {
       
       Toast.fire({
           icon: 'info',
-          title: `Please wait while we fetech your saved Data `
+          title: `Please wait while we fetch your saved Data `
         })
         
         document.querySelector('.swal2-popup').style.background = '#1b1a1a'
