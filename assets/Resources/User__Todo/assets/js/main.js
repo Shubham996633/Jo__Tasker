@@ -317,6 +317,8 @@ function DisplayTodos(){
                 let changes = snapshot.docChanges();
                 changes.forEach(change => {
                     if (change.type == "added") {
+
+                        
                         
                         renderData(change.doc);
                     }
@@ -369,3 +371,28 @@ window.onload = resizeFns;
 resizeFns();
 
 window.onresize = resizeFns
+
+setTimeout(() => {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 4800,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+      icon: 'info',
+      title: `Automatic updates Enabled `
+    })
+    
+    document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+    document.querySelector('.swal2-popup').style.color = 'white'
+    document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+    console.log('User is Sign In')
+    
+}, 6000);
