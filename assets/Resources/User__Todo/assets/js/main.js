@@ -276,7 +276,6 @@ function DisplayTodos(){
                 changes.forEach(change => {
                     if (change.type == "added") {
                         
-                        
                         renderData(change.doc);
                     }
                     else if (change.type == 'removed') {
