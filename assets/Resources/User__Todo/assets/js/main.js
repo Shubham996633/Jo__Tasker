@@ -1,3 +1,24 @@
+// =================Loader=====================
+
+onload = () => {
+    const load =document.getElementById('load')
+    setTimeout(() =>{
+        load.style.display='none'
+    },3333)
+
+    
+}
+function loader(){
+    const load =document.getElementById('load')
+    setTimeout(() =>{
+        load.style.display='none'
+    },3333)
+}
+
+loader()
+
+
+
 const spanDate = document.querySelector('#date')
 const spanMonth = document.querySelector('#month')
 const spanYear = document.querySelector('#year')
@@ -33,6 +54,27 @@ auth.onAuthStateChanged(user => {
         fs.collection('users').doc(user.uid).get().then(snapshot => {
             username.innerText = snapshot.data().Name
         })
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4800,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+          icon: 'info',
+          title: `Please wait while we fetech your saved Data `
+        })
+        
+        document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+        document.querySelector('.swal2-popup').style.color = 'white'
+        document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+        console.log('User is Sign In')
 
 
     }
