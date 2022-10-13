@@ -48,17 +48,19 @@ auth.onAuthStateChanged(user => {
 })
 
 
+
 auth.onAuthStateChanged(user => {
     if(user){
-        const username = document.getElementById('current__user')
+
+        const username = document.querySelector('#current__user')
         fs.collection('users').doc(user.uid).get().then(snapshot => {
-            username.innerText = snapshot.data().Name
+            username.innerText = `Hello, ${snapshot.data().Name}`
         })
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 4800,
+            timer: 5400,
             timerProgressBar: true,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -74,9 +76,56 @@ auth.onAuthStateChanged(user => {
         document.querySelector('.swal2-popup').style.background = '#1b1a1a'
         document.querySelector('.swal2-popup').style.color = 'white'
         document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
-        console.log('User is Sign In')
+
+        setTimeout(() => {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4800,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+              icon: 'info',
+              title: `Automatic updates Enabled `
+            })
+            
+            document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+            document.querySelector('.swal2-popup').style.color = 'white'
+            document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
+            console.log('User is Sign In')
+            
+        }, 6000);
+        
+    }else{
+        console.log('User is Sign Out')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            confirmButtonColor: 'red',
+            allowOutsideClick: false,
+            
+            confirmButtonText: 'Close',
+            text: 'It Seems no User is Sign, Please First Sign In',
+            footer: 'If user has Sign In and showing this error Contact Developer'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             
+              location = `../../../index.html`
+            }
+          })
 
 
+        document.querySelector('.app').style.transform = 'scale(0)'
+       
+       
+
+        
     }
 })
 
@@ -372,27 +421,9 @@ resizeFns();
 
 window.onresize = resizeFns
 
-setTimeout(() => {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 4800,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
-  
-  Toast.fire({
-      icon: 'info',
-      title: `Automatic updates Enabled `
-    })
-    
-    document.querySelector('.swal2-popup').style.background = '#1b1a1a'
-    document.querySelector('.swal2-popup').style.color = 'white'
-    document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
-    console.log('User is Sign In')
-    
-}, 6000);
+
+
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+    window.history.go(1);
+};

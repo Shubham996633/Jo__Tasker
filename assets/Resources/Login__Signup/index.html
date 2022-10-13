@@ -20,7 +20,15 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
-
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
 
 </head>
 
@@ -107,12 +115,11 @@
                     <!-- FireBase -->
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script>
         var firebaseConfig = {
                 apiKey: "AIzaSyAwOL7uLY_8TnMA1zvCHWvob4QUva2wtJU",
