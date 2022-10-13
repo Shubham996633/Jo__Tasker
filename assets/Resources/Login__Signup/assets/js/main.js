@@ -22,6 +22,26 @@ signIn.addEventListener('click', ()=> {
 const signUpForm = document.querySelector('.signup')
 signUpForm.addEventListener('submit', e => {
     e.preventDefault()
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'info',
+      title: `Please wait while Server is checking credentials  `
+    })
+
+    document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+  document.querySelector('.swal2-popup').style.color = 'white'
+  document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
     const name = signUpForm['name'].value
     const email = signUpForm['email'].value
     const password = signUpForm['password'].value
@@ -118,6 +138,26 @@ signUpForm.addEventListener('submit', e => {
 const loginForm = document.querySelector('.signin')
 loginForm.addEventListener('submit', e => {
     e.preventDefault()
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'info',
+      title: `Please wait while Server is checking credentials  `
+    })
+
+    document.querySelector('.swal2-popup').style.background = '#1b1a1a'
+  document.querySelector('.swal2-popup').style.color = 'white'
+  document.querySelector('.swal2-timer-progress-bar').style.background = '#bebcc5'
     const loginEmail = loginForm['loginEmail'].value
     const loginPassword = loginForm['loginPassword'].value
     auth.signInWithEmailAndPassword(loginEmail, loginPassword).then(() => {
