@@ -104,24 +104,27 @@ auth.onAuthStateChanged(user => {
         
     }else{
         console.log('User is Sign Out')
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            confirmButtonColor: 'red',
-            allowOutsideClick: false,
+        setTimeout(() => {
             
-            confirmButtonText: 'Close',
-            text: 'It Seems no User is Sign, Please First Sign In',
-            footer: 'If user has Sign In and showing this error Contact Developer'
-          }).then((result) => {
-            if (result.isConfirmed) {
-             
-              location = `../../../index.html`
-            }
-          })
-
-
-        document.querySelector('.app').style.transform = 'scale(0)'
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                confirmButtonColor: 'red',
+                allowOutsideClick: false,
+                
+                confirmButtonText: 'Close',
+                text: 'It Seems no User is Sign, Please First Sign In',
+                footer: 'If user has Sign In and showing this error Contact Developer'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                 
+                  location = `../../../index.html`
+                }
+              })
+    
+    
+            document.querySelector('.app').style.transform = 'scale(0)'
+        }, 300);
        
        
 
